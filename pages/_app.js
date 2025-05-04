@@ -1,9 +1,10 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import '../styles/Footer.css';
 import '../styles/login.css';
 import '../styles/register.css';
-import '../styles/Footer.css';
+
+
 
 export default function App({ Component, pageProps }) {
   return (
