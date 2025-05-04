@@ -1,4 +1,4 @@
-import '../styles/Footer.css'
+
 import { FaPhone, FaEnvelope, FaBriefcase, FaGithub, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
