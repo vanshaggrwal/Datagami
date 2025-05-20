@@ -1,6 +1,6 @@
 // models/User.js
 import mongoose from 'mongoose';
-import { unique } from 'next/dist/build/utils';
+
 
 const userSchema = new mongoose.Schema({
   fullName: String,
