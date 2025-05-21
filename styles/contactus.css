@@ -1,0 +1,104 @@
+.contactWrapper {
+  padding: 60px 40px;
+  background-color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #2c0066;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #333;
+}
+
+.description {
+  font-size: 16px;
+  color: #444;
+}
+
+.infoBlock {
+  margin-bottom: 12px;
+}
+
+.labelOrange {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.labelBlue {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.labelPurple {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+.labelTeal {
+  color: #06b6d4;
+  font-weight: bold;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formHeading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c0066;
+}
+
+.formGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.sendButton {
+  background-color: #fbbf24;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sendButton:hover {
+  background-color: #facc15;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

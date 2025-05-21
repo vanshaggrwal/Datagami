@@ -12,9 +12,11 @@ export default function Navbar() {
       </div>
       <div style={styles.links}>
       <Link href="/" style={styles.link}>Home</Link>
-        <Link href="/about" style={styles.link}>About</Link>
+        <Link href="/about" style={styles.link}>About</Link> 
+        <Link href="/contact-us" style={styles.link}>ContactUs</Link>
         <Link href="/login" style={styles.button}>Login </Link>
         <Link href="/auth" style={styles.button}>Register </Link>
+       
 
       </div>
     </nav>

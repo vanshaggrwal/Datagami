@@ -1,11 +1,7 @@
 {
+  "/": "pages/index.js",
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/about": "pages/about.html",
-  "/api/register": "pages/api/register.js",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/auth": "pages/auth.html",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/about": "pages/about.js",
+  "/contact-us": "pages/contact-us.js"
 }

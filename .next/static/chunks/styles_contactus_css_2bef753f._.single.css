@@ -1,0 +1,105 @@
+/* [project]/styles/contactus.css [client] (css) */
+.contactWrapper {
+  background-color: #fff;
+  padding: 60px 40px;
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  text-align: center;
+  color: #2c0066;
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  display: grid;
+}
+
+.infoSection {
+  color: #333;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.description {
+  color: #444;
+  font-size: 16px;
+}
+
+.infoBlock {
+  margin-bottom: 12px;
+}
+
+.labelOrange {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+.labelBlue {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.labelPurple {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+.labelTeal {
+  color: #06b6d4;
+  font-weight: bold;
+}
+
+.formSection {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.formHeading {
+  color: #2c0066;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formGroup {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  display: grid;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.sendButton {
+  color: #fff;
+  cursor: pointer;
+  background-color: #fbbf24;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: bold;
+  transition: background .3s;
+}
+
+.sendButton:hover {
+  background-color: #facc15;
+}
+
+@media (width <= 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=styles_contactus_css_2bef753f._.single.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/styles/login.css"],"sourcesContent":[".form-wrapper {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 100px; /* Adjust if you have a header/footer */\n    padding: 2rem;\n  }\n  \n  .container {\n    width: 100%;\n    max-width: 400px;\n    padding: 2rem;\n    background: #fff;\n    border-radius: 8px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n  }\n  \n  h2 {\n    text-align: center;\n    margin-bottom: 1.5rem;\n  }\n  \n  form {\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n  }\n  \n  input {\n    padding: 0.75rem;\n    border: 1px solid #ccc;\n    border-radius: 4px;\n    font-size: 1rem;\n  }\n  \n  button {\n    padding: 0.75rem;\n    border: none;\n    background-color: #4f46e5;\n    color: white;\n    font-size: 1rem;\n    border-radius: 4px;\n    cursor: pointer;\n  }\n  \n  button:hover {\n    background-color: #4338ca;\n  }"],"names":[],"mappings":"AAAA;;;;;;;;AAQE;;;;;;;;;AASA;;;;;AAKA;;;;;;AAMA;;;;;;;AAOA;;;;;;;;;;AAUA"}}]
+}

@@ -1,0 +1,51 @@
+/* [project]/styles/login.css [client] (css) */
+.form-wrapper {
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  padding: 2rem;
+  display: flex;
+}
+
+.container {
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  flex-direction: column;
+  gap: 1rem;
+  display: flex;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .75rem;
+  font-size: 1rem;
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 4px;
+  padding: .75rem;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+/*# sourceMappingURL=styles_login_css_2bef753f._.single.css.map*/
