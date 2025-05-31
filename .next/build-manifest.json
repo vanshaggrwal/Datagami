@@ -19,21 +19,45 @@
       "static/chunks/pages__app_5771e187._.js",
       "static/chunks/pages__app_c7da19bc._.js"
     ],
-    "/about": [
-      "static/chunks/node_modules_next_dist_f1d2d383._.js",
+    "/_error": [
+      "static/chunks/[root-of-the-server]__527cd323._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__2b9a56b5._.js",
-      "static/chunks/pages_about_5771e187._.js",
-      "static/chunks/pages_about_74c420b4._.js"
+      "static/chunks/node_modules_a51498a5._.js",
+      "static/chunks/[root-of-the-server]__923cb372._.js",
+      "static/chunks/pages__error_5771e187._.js",
+      "static/chunks/pages__error_c5ed9705._.js"
     ],
-    "/contact-us": [
+    "/programs/clinomic": [
       "static/chunks/node_modules_next_dist_f1d2d383._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
       "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__33e0cd9b._.js",
-      "static/chunks/pages_contact-us_5771e187._.js",
-      "static/chunks/pages_contact-us_7abdceea._.js"
+      "static/chunks/[root-of-the-server]__0d5aa630._.js",
+      "static/chunks/pages_programs_clinomic_jsx_5771e187._.js",
+      "static/chunks/pages_programs_clinomic_jsx_d4bcf89d._.js"
+    ],
+    "/programs/finlearn": [
+      "static/chunks/node_modules_next_cfdb1e21._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_e372faa3._.js",
+      "static/chunks/[root-of-the-server]__f2120ce8._.js",
+      "static/chunks/pages_programs_finlearn_jsx_5771e187._.js",
+      "static/chunks/pages_programs_finlearn_jsx_971f43fb._.js"
+    ],
+    "/programs/ibm-ice": [
+      "static/chunks/node_modules_next_cfdb1e21._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_e372faa3._.js",
+      "static/chunks/[root-of-the-server]__0c73c565._.js",
+      "static/chunks/pages_programs_ibm-ice_jsx_5771e187._.js",
+      "static/chunks/pages_programs_ibm-ice_jsx_ad0ceac9._.js"
+    ],
+    "/programs/techlearn": [
+      "static/chunks/node_modules_next_1bb377ee._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__68041fe3._.js",
+      "static/chunks/pages_programs_techlearn_jsx_5771e187._.js",
+      "static/chunks/pages_programs_techlearn_jsx_66858947._.js"
     ]
   },
   "devFiles": [],

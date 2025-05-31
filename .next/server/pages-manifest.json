@@ -2,6 +2,9 @@
   "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.js",
-  "/contact-us": "pages/contact-us.js"
+  "/_error": "pages/_error.js",
+  "/programs/clinomic": "pages/programs/clinomic.js",
+  "/programs/finlearn": "pages/programs/finlearn.js",
+  "/programs/ibm-ice": "pages/programs/ibm-ice.js",
+  "/programs/techlearn": "pages/programs/techlearn.js"
 }

@@ -26,7 +26,7 @@ export default function ContactUs() {
       <div className="contactWrapper">
         <h1 className="heading">Keep In Touch With Us.</h1>
         <div className="grid">
-          {/* Left Side */}
+         
           <div className="infoSection">
             <p className="description">
               Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. IST,
@@ -54,7 +54,7 @@ export default function ContactUs() {
             </div>
           </div>
 
-          {/* Right Side */}
+          
           <form className="formSection" onSubmit={handleSubmit}>
             <h2 className="formHeading">I Want To Hear From You</h2>
             <div className="styles.formGroup">
