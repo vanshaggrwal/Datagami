@@ -1,12 +1,14 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
     "/": [
-      "static/chunks/node_modules_next_bda2ad00._.js",
+      "static/chunks/node_modules_next_0df21031._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__c5d2e833._.js",
+      "static/chunks/node_modules_swiper_57aaf4d8._.js",
+      "static/chunks/node_modules_e372faa3._.js",
+      "static/chunks/[root-of-the-server]__0d9e95cd._.js",
+      "static/chunks/node_modules_swiper_c31ddbaf._.css",
       "static/chunks/pages_index_5771e187._.js",
-      "static/chunks/pages_index_2c6b972b._.js"
+      "static/chunks/pages_index_ed8d0325._.js"
     ],
     "/_app": [
       "static/chunks/node_modules_next_bda2ad00._.js",
@@ -28,12 +30,12 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages__error_c5ed9705._.js"
     ],
     "/programs/clinomic": [
-      "static/chunks/node_modules_next_dist_f1d2d383._.js",
+      "static/chunks/node_modules_next_cfdb1e21._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__0d5aa630._.js",
+      "static/chunks/node_modules_e372faa3._.js",
+      "static/chunks/[root-of-the-server]__fd574308._.js",
       "static/chunks/pages_programs_clinomic_jsx_5771e187._.js",
-      "static/chunks/pages_programs_clinomic_jsx_d4bcf89d._.js"
+      "static/chunks/pages_programs_clinomic_jsx_502e832f._.js"
     ],
     "/programs/finlearn": [
       "static/chunks/node_modules_next_cfdb1e21._.js",
@@ -52,12 +54,12 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages_programs_ibm-ice_jsx_ad0ceac9._.js"
     ],
     "/programs/techlearn": [
-      "static/chunks/node_modules_next_1bb377ee._.js",
+      "static/chunks/node_modules_next_cfdb1e21._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__68041fe3._.js",
+      "static/chunks/node_modules_e372faa3._.js",
+      "static/chunks/[root-of-the-server]__b55e8f0c._.js",
       "static/chunks/pages_programs_techlearn_jsx_5771e187._.js",
-      "static/chunks/pages_programs_techlearn_jsx_66858947._.js"
+      "static/chunks/pages_programs_techlearn_jsx_4ba1b862._.js"
     ]
   },
   "devFiles": [],
