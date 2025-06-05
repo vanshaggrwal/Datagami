@@ -6,5 +6,9 @@
   "/programs/clinomic": "pages/programs/clinomic.js",
   "/programs/finlearn": "pages/programs/finlearn.js",
   "/programs/ibm-ice": "pages/programs/ibm-ice.js",
-  "/programs/techlearn": "pages/programs/techlearn.js"
+  "/programs/techlearn": "pages/programs/techlearn.js",
+  "/services/erp": "pages/services/erp.js",
+  "/services/it-hiring": "pages/services/it-hiring.js",
+  "/services/moc": "pages/services/moc.js",
+  "/services/noc": "pages/services/noc.js"
 }
