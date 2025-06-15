@@ -8,32 +8,11 @@ export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [hasMounted, setHasMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const programRef = useRef();
   const servicesRef = useRef();
-
-  useEffect(() => {
-    setHasMounted(true); // Ensure component has mounted (fix for hydration)
-  }, []);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        programRef.current && !programRef.current.contains(event.target)
-      ) {
-        setShowPrograms(false);
-      }
-      if (
-        servicesRef.current && !servicesRef.current.contains(event.target)
-      ) {
-        setShowServices(false);
-        setActiveSubmenu(null);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const serviceMenus = {
     'Software Consultancy': [
@@ -46,6 +25,29 @@ export default function Navbar() {
     ],
   };
 
+  useEffect(() => {
+    setHasMounted(true);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // initialize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (programRef.current && !programRef.current.contains(event.target)) {
+        setShowPrograms(false);
+      }
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setShowServices(false);
+        setActiveSubmenu(null);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <nav style={styles.nav}>
       <div style={styles.logo}>
@@ -54,83 +56,110 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div style={styles.links}>
-        <Link href="/" style={styles.link}>Home</Link>
+      {/* Hamburger for mobile */}
+      {isMobile && (
+        <button onClick={() => setMenuOpen(!menuOpen)} style={styles.hamburger}>
+          ☰
+        </button>
+      )}
 
-        {/* Programs Dropdown */}
-        {hasMounted && (
-          <div ref={programRef} style={styles.dropdownContainer}>
-            <button onClick={() => setShowPrograms(prev => !prev)} style={styles.linkLifted}>
-              Programs <span style={styles.arrow}>▼</span>
-            </button>
-            {showPrograms && (
-              <div style={styles.dropdown}>
-                <Link href="/programs/finlearn" style={styles.dropdownItem}>FinLearn</Link>
-                <Link href="/programs/ibm-ice" style={styles.dropdownItem}>IBM ICE</Link>
-                <Link href="/programs/techlearn" style={styles.dropdownItem}>TechLearn</Link>
-                <Link href="/programs/clinomic" style={styles.dropdownItem}>Clinomic</Link>
-              </div>
-            )}
-          </div>
-        )}
+      {(menuOpen || !isMobile) && (
+        <div
+          style={{
+            ...styles.links,
+            ...(isMobile
+              ? {
+                  flexDirection: 'column',
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  width: '100%',
+                  backgroundColor: '#fff',
+                  padding: '1rem',
+                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                  zIndex: 999,
+                }
+              : {}),
+          }}
+        >
+          <Link href="/" style={styles.link}>Home</Link>
 
-        {/* Other Services Dropdown */}
-        {hasMounted && (
-          <div
-            ref={servicesRef}
-            style={styles.dropdownContainer}
-            onMouseLeave={() => {
-              setShowServices(false);
-              setActiveSubmenu(null);
-            }}
-          >
-            <button
-              onMouseEnter={() => setShowServices(true)}
-              style={{ ...styles.linkLifted, fontWeight: 500 }}
+          {/* Programs Dropdown */}
+          {hasMounted && (
+            <div ref={programRef} style={styles.dropdownContainer}>
+              <button onClick={() => setShowPrograms(prev => !prev)} style={styles.link}>
+                Programs <span style={styles.arrow}>▼</span>
+              </button>
+              {showPrograms && (
+                <div style={styles.dropdown}>
+                  <Link href="/programs/finlearn" style={styles.dropdownItem}>FinLearn</Link>
+                  <Link href="/programs/ibm-ice" style={styles.dropdownItem}>IBM ICE</Link>
+                  <Link href="/programs/techlearn" style={styles.dropdownItem}>TechLearn</Link>
+                  <Link href="/programs/clinomic" style={styles.dropdownItem}>Clinomic</Link>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Other Services Dropdown */}
+          {hasMounted && (
+            <div
+              ref={servicesRef}
+              style={styles.dropdownContainer}
+              onMouseLeave={() => {
+                setShowServices(false);
+                setActiveSubmenu(null);
+              }}
             >
-              Other Services <span style={styles.arrow}>▼</span>
-            </button>
+              <button
+                onMouseEnter={() => setShowServices(true)}
+                style={{ ...styles.link }}
+              >
+                Other Services <span style={styles.arrow}>▼</span>
+              </button>
 
-            {showServices && (
-              <div style={styles.dropdown}>
-                {Object.keys(serviceMenus).map((mainItem) => (
-                  <div
-                    key={mainItem}
-                    style={{
-                      ...styles.dropdownItem,
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                    }}
-                    onMouseEnter={() => setActiveSubmenu(mainItem)}
-                  >
-                    {mainItem} <span style={{ fontSize: '0.8rem' }}>▶</span>
+              {showServices && (
+                <div style={styles.dropdown}>
+                  {Object.keys(serviceMenus).map((mainItem) => (
+                    <div
+                      key={mainItem}
+                      style={{
+                        ...styles.dropdownItem,
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                      }}
+                      onMouseEnter={() => setActiveSubmenu(mainItem)}
+                    >
+                      {mainItem} <span style={{ fontSize: '0.8rem' }}>▶</span>
 
-                    {activeSubmenu === mainItem && (
-                      <div style={styles.submenu}>
-                        {serviceMenus[mainItem].map((subItem) => (
-                          <Link key={subItem.path} href={subItem.path} style={styles.submenuItem}>
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+                      {activeSubmenu === mainItem && (
+                        <div style={styles.submenu}>
+                          {serviceMenus[mainItem].map((subItem) => (
+                            <Link key={subItem.path} href={subItem.path} style={styles.submenuItem}>
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
-        <Link href="/about" style={styles.link}>About</Link>
-        <Link href="/contact-us" style={styles.link}>Contact Us</Link>
-        <Link href="/login" style={styles.button}>Login</Link>
-        <Link href="/auth" style={styles.button}>Register</Link>
-      </div>
+          <Link href="/about" style={styles.link}>About</Link>
+          <Link href="/contact-us" style={styles.link}>Contact Us</Link>
+          <Link href="/login" style={styles.button}>Login</Link>
+          <Link href="/auth" style={styles.button}>Register</Link>
+        </div>
+      )}
     </nav>
   );
 }
 
-// Styles
+// ========== STYLES ==========
+
 const baseLink = {
   padding: '0.5rem 0.75rem',
   fontSize: '1rem',
@@ -159,6 +188,14 @@ const styles = {
     fontWeight: 'bold',
     fontSize: '3rem',
   },
+  hamburger: {
+    display: 'block',
+    fontSize: '1.8rem',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    color: '#000',
+  },
   links: {
     display: 'flex',
     gap: '1rem',
@@ -167,10 +204,6 @@ const styles = {
   },
   link: {
     ...baseLink,
-  },
-  linkLifted: {
-    ...baseLink,
-    transform: 'translateY(-13px)',
   },
   arrow: {
     fontSize: '0.8rem',
@@ -212,8 +245,8 @@ const styles = {
     zIndex: 1001,
     padding: '0.5rem 0',
     minWidth: '220px',
-     display: 'flex',           // Add this
-  flexDirection: 'column',
+    display: 'flex',
+    flexDirection: 'column',
   },
   submenuItem: {
     padding: '0.5rem 1rem',

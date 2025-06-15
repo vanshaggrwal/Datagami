@@ -3,12 +3,12 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/api/login": "pages/api/login.js",
-  "/api/register": "pages/api/register.js",
+  "/about": "pages/about.js",
   "/auth": "pages/auth.js",
-  "/contact-us": "pages/contact-us.js",
-  "/dashboard": "pages/dashboard.js",
   "/login": "pages/login.js",
+  "/programs/clinomic": "pages/programs/clinomic.js",
   "/programs/finlearn": "pages/programs/finlearn.js",
-  "/services/erp": "pages/services/erp.js"
+  "/programs/techlearn": "pages/programs/techlearn.js",
+  "/services/moc": "pages/services/moc.js",
+  "/services/noc": "pages/services/noc.js"
 }

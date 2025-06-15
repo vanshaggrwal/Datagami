@@ -471,38 +471,66 @@ __turbopack_context__.s({
     "default": (()=>Hero)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 ;
 function Hero() {
+    _s();
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Hero.useEffect": ()=>{
+            const checkMobile = {
+                "Hero.useEffect.checkMobile": ()=>{
+                    setIsMobile(window.innerWidth < 768);
+                }
+            }["Hero.useEffect.checkMobile"];
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+            return ({
+                "Hero.useEffect": ()=>window.removeEventListener('resize', checkMobile)
+            })["Hero.useEffect"];
+        }
+    }["Hero.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         style: styles.hero,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                style: styles.title,
+                style: {
+                    ...styles.title,
+                    fontSize: isMobile ? '2rem' : '3rem'
+                },
                 children: "Welcome to Datagami"
             }, void 0, false, {
                 fileName: "[project]/components/Hero.js",
-                lineNumber: 4,
-                columnNumber: 9
+                lineNumber: 18,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                style: styles.subtitle,
+                style: {
+                    ...styles.subtitle,
+                    fontSize: isMobile ? '1rem' : '1.25rem'
+                },
                 children: "Unleashing data innovation for the future."
             }, void 0, false, {
                 fileName: "[project]/components/Hero.js",
-                lineNumber: 5,
-                columnNumber: 9
+                lineNumber: 21,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Hero.js",
-        lineNumber: 3,
-        columnNumber: 7
+        lineNumber: 17,
+        columnNumber: 5
     }, this);
 }
+_s(Hero, "0VTTNJATKABQPGLm9RVT0tKGUgU=");
 _c = Hero;
 const styles = {
     hero: {
+        width: '100%',
         height: '80vh',
+        boxSizing: 'border-box',
         background: 'linear-gradient(135deg, #facc15, #fbbf24)',
         color: '#1f2937',
         display: 'flex',
@@ -513,13 +541,13 @@ const styles = {
         padding: '0 1rem'
     },
     title: {
-        fontSize: '3rem',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        maxWidth: '100%'
     },
     subtitle: {
-        fontSize: '1.25rem',
         marginTop: '1rem',
-        maxWidth: '600px'
+        maxWidth: '600px',
+        width: '100%'
     }
 };
 var _c;
@@ -537,8 +565,25 @@ __turbopack_context__.s({
     "default": (()=>Features)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 ;
 function Features() {
+    _s();
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Features.useEffect": ()=>{
+            const handleResize = {
+                "Features.useEffect.handleResize": ()=>setIsMobile(window.innerWidth <= 768)
+            }["Features.useEffect.handleResize"];
+            handleResize();
+            window.addEventListener('resize', handleResize);
+            return ({
+                "Features.useEffect": ()=>window.removeEventListener('resize', handleResize)
+            })["Features.useEffect"];
+        }
+    }["Features.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         style: styles.section,
         children: [
@@ -547,79 +592,85 @@ function Features() {
                 children: "What We Offer"
             }, void 0, false, {
                 fileName: "[project]/components/Features.js",
-                lineNumber: 4,
-                columnNumber: 9
+                lineNumber: 15,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                style: styles.grid,
+                style: {
+                    ...styles.grid,
+                    flexDirection: isMobile ? 'column' : 'row',
+                    alignItems: isMobile ? 'center' : 'flex-start'
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Feature, {
                         title: "Data Analytics",
                         description: "Get deep insights from your data with powerful tools."
                     }, void 0, false, {
                         fileName: "[project]/components/Features.js",
-                        lineNumber: 6,
-                        columnNumber: 11
+                        lineNumber: 23,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Feature, {
                         title: "AI Solutions",
                         description: "Implement cutting-edge AI models in your business."
                     }, void 0, false, {
                         fileName: "[project]/components/Features.js",
-                        lineNumber: 7,
-                        columnNumber: 11
+                        lineNumber: 24,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Feature, {
                         title: "Custom Dashboards",
                         description: "Interactive and personalized dashboards built for you."
                     }, void 0, false, {
                         fileName: "[project]/components/Features.js",
-                        lineNumber: 8,
-                        columnNumber: 11
+                        lineNumber: 25,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Features.js",
-                lineNumber: 5,
-                columnNumber: 9
+                lineNumber: 16,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Features.js",
-        lineNumber: 3,
-        columnNumber: 7
+        lineNumber: 14,
+        columnNumber: 5
     }, this);
 }
+_s(Features, "0VTTNJATKABQPGLm9RVT0tKGUgU=");
 _c = Features;
 function Feature({ title, description }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: styles.card,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                style: styles.cardTitle,
                 children: title
             }, void 0, false, {
                 fileName: "[project]/components/Features.js",
-                lineNumber: 17,
-                columnNumber: 9
+                lineNumber: 34,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: description
             }, void 0, false, {
                 fileName: "[project]/components/Features.js",
-                lineNumber: 18,
-                columnNumber: 9
+                lineNumber: 35,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Features.js",
-        lineNumber: 16,
-        columnNumber: 7
+        lineNumber: 33,
+        columnNumber: 5
     }, this);
 }
 _c1 = Feature;
 const styles = {
     section: {
-        padding: '4rem 2rem',
+        padding: '4rem 1rem',
         textAlign: 'center'
     },
     heading: {
@@ -633,11 +684,17 @@ const styles = {
         flexWrap: 'wrap'
     },
     card: {
-        width: '250px',
+        width: '100%',
+        maxWidth: '280px',
         padding: '1.5rem',
         borderRadius: '10px',
         backgroundColor: '#f9fafb',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.05)'
+        boxShadow: '0 4px 8px rgba(0,0,0,0.05)',
+        textAlign: 'left'
+    },
+    cardTitle: {
+        fontSize: '1.25rem',
+        marginBottom: '0.5rem'
     }
 };
 var _c, _c1;
@@ -657,35 +714,60 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/link.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 ;
 ;
 function CTA() {
+    _s();
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CTA.useEffect": ()=>{
+            const checkMobile = {
+                "CTA.useEffect.checkMobile": ()=>setIsMobile(window.innerWidth <= 768)
+            }["CTA.useEffect.checkMobile"];
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+            return ({
+                "CTA.useEffect": ()=>window.removeEventListener('resize', checkMobile)
+            })["CTA.useEffect"];
+        }
+    }["CTA.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         style: styles.cta,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                style: {
+                    fontSize: isMobile ? '1.5rem' : '2rem',
+                    marginBottom: '1rem'
+                },
                 children: "Ready to transform your data journey?"
             }, void 0, false, {
                 fileName: "[project]/components/CTA.js",
-                lineNumber: 6,
+                lineNumber: 16,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                 href: "/auth",
-                style: styles.button,
+                style: {
+                    ...styles.button,
+                    fontSize: isMobile ? '0.9rem' : '1rem'
+                },
                 children: "Join Datagami"
             }, void 0, false, {
                 fileName: "[project]/components/CTA.js",
-                lineNumber: 7,
+                lineNumber: 19,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/CTA.js",
-        lineNumber: 5,
+        lineNumber: 15,
         columnNumber: 5
     }, this);
 }
+_s(CTA, "0VTTNJATKABQPGLm9RVT0tKGUgU=");
 _c = CTA;
 const styles = {
     cta: {
@@ -1055,7 +1137,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
 {
-const PAGE_PATH = "/dashboard";
+const PAGE_PATH = "/";
 (window.__NEXT_P = window.__NEXT_P || []).push([
     PAGE_PATH,
     ()=>{

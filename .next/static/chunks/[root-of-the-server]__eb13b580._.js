@@ -522,32 +522,56 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>moc)
+    "default": (()=>MOC)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/pages/services/images/moc1.jpeg.mjs { IMAGE => "[project]/pages/services/images/moc1.jpeg (static in ecmascript)" } [client] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/pages/services/images/moc2.webp.mjs { IMAGE => "[project]/pages/services/images/moc2.webp (static in ecmascript)" } [client] (structured image object, ecmascript)');
+;
+var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
 ;
-function moc() {
+function MOC() {
+    _s();
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MOC.useEffect": ()=>{
+            const handleResize = {
+                "MOC.useEffect.handleResize": ()=>setIsMobile(window.innerWidth < 768)
+            }["MOC.useEffect.handleResize"];
+            handleResize();
+            window.addEventListener('resize', handleResize);
+            return ({
+                "MOC.useEffect": ()=>window.removeEventListener('resize', handleResize)
+            })["MOC.useEffect"];
+        }
+    }["MOC.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: styles.page,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                style: styles.hero,
+                style: {
+                    ...styles.hero,
+                    flexDirection: isMobile ? 'column' : 'row'
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: {
+                            flex: 1,
+                            minWidth: '300px'
+                        },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 style: styles.servicesDetails,
                                 children: "Services Details"
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 13,
+                                lineNumber: 22,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -558,12 +582,12 @@ function moc() {
                                         children: "Managed"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 15,
+                                        lineNumber: 24,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 15,
+                                        lineNumber: 24,
                                         columnNumber: 58
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -571,13 +595,13 @@ function moc() {
                                         children: "Operations Center (MOC)"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 16,
+                                        lineNumber: 25,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 14,
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -586,55 +610,66 @@ function moc() {
                                     "• OS/Server Management",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 28,
                                         columnNumber: 35
                                     }, this),
                                     "• Database Management",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 20,
+                                        lineNumber: 29,
                                         columnNumber: 34
                                     }, this),
                                     "• DC Network Management",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 21,
+                                        lineNumber: 30,
                                         columnNumber: 36
                                     }, this),
                                     "• Security Management",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 22,
+                                        lineNumber: 31,
                                         columnNumber: 34
                                     }, this),
                                     "• Storage and Backup Management"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 18,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 12,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                        src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                        alt: "Team working",
-                        width: 500,
-                        height: 350,
-                        style: styles.image
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: {
+                            flex: 1,
+                            minWidth: '300px',
+                            textAlign: isMobile ? 'center' : 'right'
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                            alt: "Team working",
+                            width: 500,
+                            height: 350,
+                            style: styles.image
+                        }, void 0, false, {
+                            fileName: "[project]/pages/services/moc.jsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 26,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/moc.jsx",
-                lineNumber: 11,
+                lineNumber: 20,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -645,7 +680,7 @@ function moc() {
                         children: "Managed Services"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 37,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -653,21 +688,35 @@ function moc() {
                         children: "What we do?"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 38,
+                        lineNumber: 49,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        style: styles.contentRow,
+                        style: {
+                            ...styles.contentRow,
+                            flexDirection: isMobile ? 'column' : 'row'
+                        },
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                                alt: "Person working",
-                                width: 400,
-                                height: 300,
-                                style: styles.image
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                style: {
+                                    flex: 1,
+                                    minWidth: '300px',
+                                    textAlign: isMobile ? 'center' : 'left'
+                                },
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc2$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                                    alt: "Person working",
+                                    width: 400,
+                                    height: 300,
+                                    style: styles.image
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/services/moc.jsx",
+                                    lineNumber: 52,
+                                    columnNumber: 13
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 40,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -676,31 +725,31 @@ function moc() {
                                     "Our Data Centre Services ensure high availability and reliability. We provide severity-based SLA support and onsite/remote assistance to servers, networks, applications, security, messaging, and storage & backup.",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 63,
                                         columnNumber: 69
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/moc.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 63,
                                         columnNumber: 75
                                     }, this),
                                     "We dramatically simplify WAN infrastructure monitoring and management. Our experts at Datagami Network Operations Center (NOC) and Security Operations Center (SOC) use automated tools to manage MPLS operations, network infrastructure, and security threats."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 47,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 39,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/moc.jsx",
-                lineNumber: 36,
+                lineNumber: 47,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -711,7 +760,7 @@ function moc() {
                         children: "Subscribe our Newsletter &"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 60,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -719,7 +768,7 @@ function moc() {
                         children: "Subscribe to get Latest News, Offer and connect With Us."
                     }, void 0, false, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 61,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -731,7 +780,7 @@ function moc() {
                                 style: styles.input
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 65,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -739,28 +788,30 @@ function moc() {
                                 children: "Submit"
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/moc.jsx",
-                                lineNumber: 66,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/moc.jsx",
-                        lineNumber: 64,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/moc.jsx",
-                lineNumber: 59,
+                lineNumber: 72,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/services/moc.jsx",
-        lineNumber: 9,
+        lineNumber: 18,
         columnNumber: 5
     }, this);
 }
+_s(MOC, "0VTTNJATKABQPGLm9RVT0tKGUgU=");
+_c = MOC;
 const styles = {
     page: {
         fontFamily: 'sans-serif',
@@ -772,6 +823,7 @@ const styles = {
         padding: '3rem',
         backgroundColor: '#f6fff8',
         alignItems: 'center',
+        gap: '2rem',
         flexWrap: 'wrap'
     },
     servicesDetails: {
@@ -796,7 +848,10 @@ const styles = {
     },
     image: {
         borderRadius: '12px',
-        marginTop: '1rem'
+        marginTop: '1rem',
+        width: '100%',
+        height: 'auto',
+        objectFit: 'cover'
     },
     section: {
         padding: '3rem',
@@ -822,6 +877,7 @@ const styles = {
         flexWrap: 'wrap'
     },
     description: {
+        flex: 1,
         maxWidth: '600px',
         color: '#374151'
     },
@@ -851,7 +907,8 @@ const styles = {
         borderRadius: '6px',
         border: '1px solid #ccc',
         fontSize: '1rem',
-        minWidth: '250px'
+        minWidth: '250px',
+        flexGrow: 1
     },
     submit: {
         backgroundColor: '#fbbf24',
@@ -863,6 +920,8 @@ const styles = {
         cursor: 'pointer'
     }
 };
+var _c;
+__turbopack_context__.k.register(_c, "MOC");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }

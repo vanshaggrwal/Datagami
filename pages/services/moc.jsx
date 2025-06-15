@@ -1,15 +1,24 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Img1   from './images/moc1.jpeg';
-import Img2   from './images/moc2.webp';
+import Img1 from './images/moc1.jpeg';
+import Img2 from './images/moc2.webp';
 
+export default function MOC() {
+  const [isMobile, setIsMobile] = useState(false);
 
-export default function moc() {
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div style={styles.page}>
       {/* Hero Section */}
-      <section style={styles.hero}>
-        <div>
+      <section style={{ ...styles.hero, flexDirection: isMobile ? 'column' : 'row' }}>
+        <div style={{ flex: 1, minWidth: '300px' }}>
           <p style={styles.servicesDetails}>Services Details</p>
           <h1 style={styles.title}>
             <span style={styles.titleBold}>Managed</span><br />
@@ -23,27 +32,31 @@ export default function moc() {
             • Storage and Backup Management
           </p>
         </div>
-        <Image
-          src={Img1}
-          alt="Team working"
-          width={500}
-          height={350}
-          style={styles.image}
-        />
+        <div style={{ flex: 1, minWidth: '300px', textAlign: isMobile ? 'center' : 'right' }}>
+          <Image
+            src={Img1}
+            alt="Team working"
+            width={500}
+            height={350}
+            style={styles.image}
+          />
+        </div>
       </section>
 
       {/* Description Section */}
       <section style={styles.section}>
         <h2 style={styles.sectionTitle}>Managed Services</h2>
         <h3 style={styles.subheading}>What we do?</h3>
-        <div style={styles.contentRow}>
-          <Image
-            src={Img2}
-            alt="Person working"
-            width={400}
-            height={300}
-            style={styles.image}
-          />
+        <div style={{ ...styles.contentRow, flexDirection: isMobile ? 'column' : 'row' }}>
+          <div style={{ flex: 1, minWidth: '300px', textAlign: isMobile ? 'center' : 'left' }}>
+            <Image
+              src={Img2}
+              alt="Person working"
+              width={400}
+              height={300}
+              style={styles.image}
+            />
+          </div>
           <p style={styles.description}>
             Our Data Centre Services ensure high availability and reliability. We provide
             severity-based SLA support and onsite/remote assistance to servers, networks,
@@ -81,6 +94,7 @@ const styles = {
     padding: '3rem',
     backgroundColor: '#f6fff8',
     alignItems: 'center',
+    gap: '2rem',
     flexWrap: 'wrap',
   },
   servicesDetails: {
@@ -106,6 +120,9 @@ const styles = {
   image: {
     borderRadius: '12px',
     marginTop: '1rem',
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
   },
   section: {
     padding: '3rem',
@@ -131,6 +148,7 @@ const styles = {
     flexWrap: 'wrap',
   },
   description: {
+    flex: 1,
     maxWidth: '600px',
     color: '#374151',
   },
@@ -161,6 +179,7 @@ const styles = {
     border: '1px solid #ccc',
     fontSize: '1rem',
     minWidth: '250px',
+    flexGrow: 1,
   },
   submit: {
     backgroundColor: '#fbbf24',

@@ -62,9 +62,10 @@ const __TURBOPACK__default__export__ = {
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>noc)
+    "default": (()=>NOC)
 });
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react [external] (react, cjs)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/pages/services/images/moc1.jpeg.mjs { IMAGE => "[project]/pages/services/images/moc1.jpeg (static in ecmascript)" } [ssr] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/pages/services/images/noc1.webp.mjs { IMAGE => "[project]/pages/services/images/noc1.webp (static in ecmascript)" } [ssr] (structured image object, ecmascript)');
@@ -73,21 +74,36 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$
 ;
 ;
 ;
-function noc() {
+;
+function NOC() {
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        const handleResize = ()=>setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return ()=>window.removeEventListener('resize', handleResize);
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         style: styles.page,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
-                style: styles.hero,
+                style: {
+                    ...styles.hero,
+                    flexDirection: isMobile ? 'column' : 'row'
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        style: {
+                            flex: 1,
+                            minWidth: '300px'
+                        },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                 style: styles.servicesDetails,
                                 children: "Services Details"
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 13,
+                                lineNumber: 22,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
@@ -98,12 +114,12 @@ function noc() {
                                         children: "Network"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/services/noc.jsx",
-                                        lineNumber: 15,
+                                        lineNumber: 24,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/pages/services/noc.jsx",
-                                        lineNumber: 15,
+                                        lineNumber: 24,
                                         columnNumber: 58
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -111,13 +127,13 @@ function noc() {
                                         children: "Operations Center (NOC)"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/services/noc.jsx",
-                                        lineNumber: 16,
+                                        lineNumber: 25,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 14,
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -125,30 +141,41 @@ function noc() {
                                 children: "Our global compliance service partner – eProtect 360"
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 18,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 12,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                        alt: "Team working",
-                        width: 500,
-                        height: 350,
-                        style: styles.image
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                        style: {
+                            flex: 1,
+                            minWidth: '300px',
+                            textAlign: isMobile ? 'center' : 'right'
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$moc1$2e$jpeg__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                            alt: "Team working",
+                            width: 500,
+                            height: 350,
+                            style: styles.image
+                        }, void 0, false, {
+                            fileName: "[project]/pages/services/noc.jsx",
+                            lineNumber: 32,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 22,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/noc.jsx",
-                lineNumber: 11,
+                lineNumber: 20,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
@@ -159,7 +186,7 @@ function noc() {
                         children: "Network Services"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 33,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
@@ -167,41 +194,68 @@ function noc() {
                         children: "What we do?"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 34,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        style: styles.contentRow,
+                        style: {
+                            ...styles.contentRow,
+                            flexDirection: isMobile ? 'column' : 'row'
+                        },
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
-                                alt: "Person working",
-                                width: 400,
-                                height: 300,
-                                style: styles.image
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                style: {
+                                    flex: 1,
+                                    minWidth: '300px',
+                                    textAlign: isMobile ? 'center' : 'left'
+                                },
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    src: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$pages$2f$services$2f$images$2f$noc1$2e$webp__$28$static__in__ecmascript$2922$__$7d$__$5b$ssr$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                                    alt: "Person working",
+                                    width: 400,
+                                    height: 300,
+                                    style: styles.image
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/services/noc.jsx",
+                                    lineNumber: 48,
+                                    columnNumber: 13
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 36,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                                 style: styles.description,
-                                children: "Continuously monitoring a wide variety of information and network systems that include communications circuits, cloud resources, LAN/WAN systems, routers, switches, firewalls and VoIP systems and application delivery. Providing timely response to all incidents, outages and performance issues. Categorizing issues for escalation to appropriate technical teams. Recognizing, identifying and prioritizing incidents in accordance with customer business requirements, organizational policies and operational impact."
-                            }, void 0, false, {
+                                children: [
+                                    "Continuously monitoring a wide variety of information and network systems that include communications circuits, cloud resources, LAN/WAN systems, routers, switches, firewalls, and VoIP systems and application delivery.",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/pages/services/noc.jsx",
+                                        lineNumber: 59,
+                                        columnNumber: 55
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/pages/services/noc.jsx",
+                                        lineNumber: 59,
+                                        columnNumber: 61
+                                    }, this),
+                                    "Providing timely response to all incidents, outages and performance issues. Categorizing issues for escalation to appropriate technical teams. Recognizing, identifying and prioritizing incidents in accordance with customer business requirements, organizational policies and operational impact."
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 43,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 35,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/noc.jsx",
-                lineNumber: 32,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
@@ -212,7 +266,7 @@ function noc() {
                         children: "Subscribe our Newsletter &"
                     }, void 0, false, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 54,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -220,7 +274,7 @@ function noc() {
                         children: "Subscribe to get Latest News, Offer and connect With Us."
                     }, void 0, false, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 55,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -232,7 +286,7 @@ function noc() {
                                 style: styles.input
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 59,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -240,25 +294,25 @@ function noc() {
                                 children: "Submit"
                             }, void 0, false, {
                                 fileName: "[project]/pages/services/noc.jsx",
-                                lineNumber: 60,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/services/noc.jsx",
-                        lineNumber: 58,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/services/noc.jsx",
-                lineNumber: 53,
+                lineNumber: 69,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/services/noc.jsx",
-        lineNumber: 9,
+        lineNumber: 18,
         columnNumber: 5
     }, this);
 }
@@ -273,6 +327,7 @@ const styles = {
         padding: '3rem',
         backgroundColor: '#f6fff8',
         alignItems: 'center',
+        gap: '2rem',
         flexWrap: 'wrap'
     },
     servicesDetails: {
@@ -297,7 +352,10 @@ const styles = {
     },
     image: {
         borderRadius: '12px',
-        marginTop: '1rem'
+        marginTop: '1rem',
+        width: '100%',
+        height: 'auto',
+        objectFit: 'cover'
     },
     section: {
         padding: '3rem',
@@ -323,6 +381,7 @@ const styles = {
         flexWrap: 'wrap'
     },
     description: {
+        flex: 1,
         maxWidth: '600px',
         color: '#374151'
     },
@@ -352,7 +411,8 @@ const styles = {
         borderRadius: '6px',
         border: '1px solid #ccc',
         fontSize: '1rem',
-        minWidth: '250px'
+        minWidth: '250px',
+        flexGrow: 1
     },
     submit: {
         backgroundColor: '#fbbf24',

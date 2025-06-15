@@ -28,24 +28,10 @@ function Navbar() {
     const [showServices, setShowServices] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
     const [activeSubmenu, setActiveSubmenu] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(null);
     const [hasMounted, setHasMounted] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
+    const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
+    const [menuOpen, setMenuOpen] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
     const programRef = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useRef"])();
     const servicesRef = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useRef"])();
-    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
-        setHasMounted(true); // Ensure component has mounted (fix for hydration)
-    }, []);
-    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
-        function handleClickOutside(event) {
-            if (programRef.current && !programRef.current.contains(event.target)) {
-                setShowPrograms(false);
-            }
-            if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-                setShowServices(false);
-                setActiveSubmenu(null);
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside);
-        return ()=>document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
     const serviceMenus = {
         'Software Consultancy': [
             {
@@ -68,6 +54,26 @@ function Navbar() {
             }
         ]
     };
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        setHasMounted(true);
+        const handleResize = ()=>setIsMobile(window.innerWidth < 768);
+        handleResize(); // initialize
+        window.addEventListener('resize', handleResize);
+        return ()=>window.removeEventListener('resize', handleResize);
+    }, []);
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        function handleClickOutside(event) {
+            if (programRef.current && !programRef.current.contains(event.target)) {
+                setShowPrograms(false);
+            }
+            if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+                setShowServices(false);
+                setActiveSubmenu(null);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return ()=>document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("nav", {
         style: styles.nav,
         children: [
@@ -83,21 +89,43 @@ function Navbar() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 53,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/Navbar.js",
-                    lineNumber: 52,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.js",
-                lineNumber: 51,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                style: styles.links,
+            isMobile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                onClick: ()=>setMenuOpen(!menuOpen),
+                style: styles.hamburger,
+                children: "☰"
+            }, void 0, false, {
+                fileName: "[project]/components/Navbar.js",
+                lineNumber: 61,
+                columnNumber: 9
+            }, this),
+            (menuOpen || !isMobile) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                style: {
+                    ...styles.links,
+                    ...isMobile ? {
+                        flexDirection: 'column',
+                        position: 'absolute',
+                        top: '100%',
+                        left: 0,
+                        width: '100%',
+                        backgroundColor: '#fff',
+                        padding: '1rem',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                        zIndex: 999
+                    } : {}
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/",
@@ -105,8 +133,8 @@ function Navbar() {
                         children: "Home"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 58,
-                        columnNumber: 9
+                        lineNumber: 85,
+                        columnNumber: 11
                     }, this),
                     hasMounted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         ref: programRef,
@@ -114,7 +142,7 @@ function Navbar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setShowPrograms((prev)=>!prev),
-                                style: styles.linkLifted,
+                                style: styles.link,
                                 children: [
                                     "Programs ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -122,14 +150,14 @@ function Navbar() {
                                         children: "▼"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 64,
-                                        columnNumber: 24
+                                        lineNumber: 91,
+                                        columnNumber: 26
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Navbar.js",
-                                lineNumber: 63,
-                                columnNumber: 13
+                                lineNumber: 90,
+                                columnNumber: 15
                             }, this),
                             showPrograms && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 style: styles.dropdown,
@@ -140,8 +168,8 @@ function Navbar() {
                                         children: "FinLearn"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 68,
-                                        columnNumber: 17
+                                        lineNumber: 95,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/programs/ibm-ice",
@@ -149,8 +177,8 @@ function Navbar() {
                                         children: "IBM ICE"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 69,
-                                        columnNumber: 17
+                                        lineNumber: 96,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/programs/techlearn",
@@ -158,8 +186,8 @@ function Navbar() {
                                         children: "TechLearn"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 70,
-                                        columnNumber: 17
+                                        lineNumber: 97,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/programs/clinomic",
@@ -167,20 +195,20 @@ function Navbar() {
                                         children: "Clinomic"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 71,
-                                        columnNumber: 17
+                                        lineNumber: 98,
+                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Navbar.js",
-                                lineNumber: 67,
-                                columnNumber: 15
+                                lineNumber: 94,
+                                columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 62,
-                        columnNumber: 11
+                        lineNumber: 89,
+                        columnNumber: 13
                     }, this),
                     hasMounted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                         ref: servicesRef,
@@ -193,8 +221,7 @@ function Navbar() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                 onMouseEnter: ()=>setShowServices(true),
                                 style: {
-                                    ...styles.linkLifted,
-                                    fontWeight: 500
+                                    ...styles.link
                                 },
                                 children: [
                                     "Other Services ",
@@ -203,14 +230,14 @@ function Navbar() {
                                         children: "▼"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 91,
-                                        columnNumber: 30
+                                        lineNumber: 118,
+                                        columnNumber: 32
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Navbar.js",
-                                lineNumber: 87,
-                                columnNumber: 13
+                                lineNumber: 114,
+                                columnNumber: 15
                             }, this),
                             showServices && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                 style: styles.dropdown,
@@ -231,8 +258,8 @@ function Navbar() {
                                                 children: "▶"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.js",
-                                                lineNumber: 106,
-                                                columnNumber: 32
+                                                lineNumber: 133,
+                                                columnNumber: 34
                                             }, this),
                                             activeSubmenu === mainItem && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                                 style: styles.submenu,
@@ -242,30 +269,30 @@ function Navbar() {
                                                         children: subItem.label
                                                     }, subItem.path, false, {
                                                         fileName: "[project]/components/Navbar.js",
-                                                        lineNumber: 111,
-                                                        columnNumber: 27
+                                                        lineNumber: 138,
+                                                        columnNumber: 29
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Navbar.js",
-                                                lineNumber: 109,
-                                                columnNumber: 23
+                                                lineNumber: 136,
+                                                columnNumber: 25
                                             }, this)
                                         ]
                                     }, mainItem, true, {
                                         fileName: "[project]/components/Navbar.js",
-                                        lineNumber: 97,
-                                        columnNumber: 19
+                                        lineNumber: 124,
+                                        columnNumber: 21
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/Navbar.js",
-                                lineNumber: 95,
-                                columnNumber: 15
+                                lineNumber: 122,
+                                columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 79,
-                        columnNumber: 11
+                        lineNumber: 106,
+                        columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/about",
@@ -273,8 +300,8 @@ function Navbar() {
                         children: "About"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 124,
-                        columnNumber: 9
+                        lineNumber: 151,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/contact-us",
@@ -282,8 +309,8 @@ function Navbar() {
                         children: "Contact Us"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 125,
-                        columnNumber: 9
+                        lineNumber: 152,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/login",
@@ -291,8 +318,8 @@ function Navbar() {
                         children: "Login"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 126,
-                        columnNumber: 9
+                        lineNumber: 153,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/auth",
@@ -300,23 +327,23 @@ function Navbar() {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.js",
-                        lineNumber: 127,
-                        columnNumber: 9
+                        lineNumber: 154,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Navbar.js",
-                lineNumber: 57,
-                columnNumber: 7
+                lineNumber: 67,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Navbar.js",
-        lineNumber: 50,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }
-// Styles
+// ========== STYLES ==========
 const baseLink = {
     padding: '0.5rem 0.75rem',
     fontSize: '1rem',
@@ -344,6 +371,14 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '3rem'
     },
+    hamburger: {
+        display: 'block',
+        fontSize: '1.8rem',
+        background: 'none',
+        border: 'none',
+        cursor: 'pointer',
+        color: '#000'
+    },
     links: {
         display: 'flex',
         gap: '1rem',
@@ -352,10 +387,6 @@ const styles = {
     },
     link: {
         ...baseLink
-    },
-    linkLifted: {
-        ...baseLink,
-        transform: 'translateY(-13px)'
     },
     arrow: {
         fontSize: '0.8rem',
@@ -432,267 +463,298 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 ;
 function Footer() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("footer", {
-        className: "footer",
+        className: "bg-gray-900 text-white py-10 px-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "footer-container",
+                className: "max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "footer-section",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 src: "/logo.webp",
                                 alt: "Datagami Logo",
-                                className: "footer-logo"
+                                className: "w-32 mb-3"
+                            }, void 0, false, {
+                                fileName: "[project]/components/Footer.js",
+                                lineNumber: 10,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                className: "italic text-sm mb-4",
+                                children: "“Lead Digital Technology”"
                             }, void 0, false, {
                                 fileName: "[project]/components/Footer.js",
                                 lineNumber: 11,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                className: "footer-tagline",
-                                children: "“Lead Digital Technology”"
-                            }, void 0, false, {
-                                fileName: "[project]/components/Footer.js",
-                                lineNumber: 12,
-                                columnNumber: 11
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "footer-item",
+                                className: "flex items-start gap-3 mb-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaPhone"], {}, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaPhone"], {
+                                        className: "mt-1"
+                                    }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 15,
+                                        lineNumber: 14,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "font-semibold",
                                                 children: "Phone:"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/Footer.js",
+                                                lineNumber: 16,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "text-sm",
+                                                children: "+91 97029 34397 / +91 77381 70621"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Footer.js",
                                                 lineNumber: 17,
                                                 columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                children: "+91 97029 34397 / +91 77381 70621"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/Footer.js",
-                                                lineNumber: 18,
-                                                columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 16,
+                                        lineNumber: 15,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 14,
+                                lineNumber: 13,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "footer-item",
+                                className: "flex items-start gap-3 mb-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaEnvelope"], {}, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaEnvelope"], {
+                                        className: "mt-1"
+                                    }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 23,
+                                        lineNumber: 22,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "font-semibold",
                                                 children: "Email:"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/Footer.js",
+                                                lineNumber: 24,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "text-sm",
+                                                children: "info@datagami.in"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Footer.js",
                                                 lineNumber: 25,
                                                 columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                                                children: "info@datagami.in"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/Footer.js",
-                                                lineNumber: 26,
-                                                columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 24,
+                                        lineNumber: 23,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 22,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "footer-item",
+                                className: "flex items-start gap-3",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaBriefcase"], {}, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaBriefcase"], {
+                                        className: "mt-1"
+                                    }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 31,
+                                        lineNumber: 30,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "font-semibold",
                                                 children: "Address:"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/Footer.js",
-                                                lineNumber: 33,
+                                                lineNumber: 32,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                className: "text-sm",
                                                 children: [
                                                     "309, Crescent Business Square,",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/Footer.js",
-                                                        lineNumber: 35,
+                                                        lineNumber: 34,
                                                         columnNumber: 47
                                                     }, this),
                                                     "Khairani Rd, Saki Naka, Mumbai,",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/components/Footer.js",
-                                                        lineNumber: 36,
+                                                        lineNumber: 35,
                                                         columnNumber: 48
                                                     }, this),
                                                     "Maharashtra 400072"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/Footer.js",
-                                                lineNumber: 34,
+                                                lineNumber: 33,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 32,
+                                        lineNumber: 31,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 30,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Footer.js",
-                        lineNumber: 10,
+                        lineNumber: 9,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "footer-section",
+                        className: "flex flex-col gap-3",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                className: "font-semibold",
                                 children: "Follow us on social media"
                             }, void 0, false, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 45,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "footer-icons",
+                                className: "flex gap-4 text-xl",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaGithub"], {}, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-blue-400",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaGithub"], {}, void 0, false, {
+                                            fileName: "[project]/components/Footer.js",
+                                            lineNumber: 46,
+                                            columnNumber: 57
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/Footer.js",
+                                        lineNumber: 46,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-pink-500",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaInstagram"], {}, void 0, false, {
+                                            fileName: "[project]/components/Footer.js",
+                                            lineNumber: 47,
+                                            columnNumber: 57
+                                        }, this)
+                                    }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
                                         lineNumber: 47,
                                         columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$ssr$5d$__$28$ecmascript$29$__["FaInstagram"], {}, void 0, false, {
-                                        fileName: "[project]/components/Footer.js",
-                                        lineNumber: 48,
-                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 46,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Footer.js",
-                        lineNumber: 44,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "footer-section",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                className: "font-semibold mb-3",
                                 children: "Get In Touch"
                             }, void 0, false, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 54,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "footer-input-group",
+                                className: "flex",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                                         type: "email",
-                                        placeholder: "Your Email"
+                                        placeholder: "Your Email",
+                                        className: "p-2 rounded-l-md w-full text-black"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 56,
+                                        lineNumber: 55,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                                        className: "bg-blue-600 px-4 py-2 rounded-r-md hover:bg-blue-700",
                                         children: "➜"
                                     }, void 0, false, {
                                         fileName: "[project]/components/Footer.js",
-                                        lineNumber: 57,
+                                        lineNumber: 60,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/Footer.js",
-                                lineNumber: 55,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/Footer.js",
-                        lineNumber: 53,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Footer.js",
-                lineNumber: 7,
+                lineNumber: 6,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "footer-bottom",
+                className: "border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                        className: "mb-2 md:mb-0",
                         children: "Terms & Conditions"
                     }, void 0, false, {
                         fileName: "[project]/components/Footer.js",
-                        lineNumber: 63,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                        children: "© 2024 Datagami Technologies. All Right Reserved."
+                        children: "© 2024 Datagami Technologies. All Rights Reserved."
                     }, void 0, false, {
                         fileName: "[project]/components/Footer.js",
-                        lineNumber: 64,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/Footer.js",
-                lineNumber: 62,
+                lineNumber: 66,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Footer.js",
-        lineNumber: 6,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }

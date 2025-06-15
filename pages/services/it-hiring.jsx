@@ -1,48 +1,69 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Img1   from './images/moc1.jpeg';
-import Img2   from './images/it.webp';
+import Img1 from './images/moc1.jpeg';
+import Img2 from './images/it.webp';
 
+export default function ITHiring() {
+  const [isMobile, setIsMobile] = useState(false);
 
-export default function ithiring() {
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div style={styles.page}>
       {/* Hero Section */}
-      <section style={styles.hero}>
-        <div>
+      <section style={{ ...styles.hero, flexDirection: isMobile ? 'column' : 'row' }}>
+        <div style={{ flex: 1, minWidth: '300px' }}>
           <p style={styles.servicesDetails}>Services Details</p>
           <h1 style={styles.title}>
             <span style={styles.titleBold}>IT</span><br />
             <span style={styles.titleHighlight}>Hiring</span>
           </h1>
           <p style={styles.serviceList}>
-           HR Consulting is a critical component of any business that wants to attract<br></br> and retain top talent. For IT-related hiring, the stakes are even higher, given <br></br>the fierce competition for skilled professionals in the technology industry.
+            HR Consulting is a critical component of any business that wants to attract<br />
+            and retain top talent. For IT-related hiring, the stakes are even higher, given<br />
+            the fierce competition for skilled professionals in the technology industry.
           </p>
         </div>
-        <Image
-          src={Img1}
-          alt="Team working"
-          width={500}
-          height={350}
-          style={styles.image}
-        />
+        <div style={{ flex: 1, minWidth: '300px', textAlign: isMobile ? 'center' : 'right' }}>
+          <Image
+            src={Img1}
+            alt="Team working"
+            width={500}
+            height={350}
+            style={styles.image}
+          />
+        </div>
       </section>
 
       {/* Description Section */}
       <section style={styles.section}>
         <h2 style={styles.sectionTitle}>IT Hiring Services</h2>
         <h3 style={styles.subheading}>What we do?</h3>
-        <div style={styles.contentRow}>
-          <Image
-            src={Img2}
-            alt="Person working"
-            width={400}
-            height={300}
-            style={styles.image}
-          />
+        <div style={{ ...styles.contentRow, flexDirection: isMobile ? 'column' : 'row' }}>
+          <div style={{ flex: 1, minWidth: '300px', textAlign: isMobile ? 'center' : 'left' }}>
+            <Image
+              src={Img2}
+              alt="Person working"
+              width={400}
+              height={300}
+              style={styles.image}
+            />
+          </div>
           <p style={styles.description}>
-            At our HR consulting firm, we specialize in helping businesses navigate the complexities of IT-related hiring. With a deep understanding of the latest trends and best practices in the tech industry, we provide expert guidance and support to help our clients find and hire the best IT professionals for their needs.
-Our team of experienced HR consultants brings a wealth of knowledge and expertise to every project. We work closely with our clients to understand their unique needs and requirements, and to develop customized strategies that align with their business goals and objectives.
+            At our HR consulting firm, we specialize in helping businesses navigate the complexities
+            of IT-related hiring. With a deep understanding of the latest trends and best practices
+            in the tech industry, we provide expert guidance and support to help our clients find
+            and hire the best IT professionals for their needs.<br /><br />
+            Our team of experienced HR consultants brings a wealth of knowledge and expertise to
+            every project. We work closely with our clients to understand their unique needs and
+            requirements, and to develop customized strategies that align with their business goals
+            and objectives.
           </p>
         </div>
       </section>
@@ -73,6 +94,7 @@ const styles = {
     padding: '3rem',
     backgroundColor: '#f6fff8',
     alignItems: 'center',
+    gap: '2rem',
     flexWrap: 'wrap',
   },
   servicesDetails: {
@@ -98,6 +120,9 @@ const styles = {
   image: {
     borderRadius: '12px',
     marginTop: '1rem',
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
   },
   section: {
     padding: '3rem',
@@ -123,6 +148,7 @@ const styles = {
     flexWrap: 'wrap',
   },
   description: {
+    flex: 1,
     maxWidth: '600px',
     color: '#374151',
   },
@@ -153,6 +179,7 @@ const styles = {
     border: '1px solid #ccc',
     fontSize: '1rem',
     minWidth: '250px',
+    flexGrow: 1,
   },
   submit: {
     backgroundColor: '#fbbf24',
