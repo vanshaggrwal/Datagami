@@ -87,7 +87,7 @@ export default function Navbar() {
           {/* Programs Dropdown */}
           {hasMounted && (
             <div ref={programRef} style={styles.dropdownContainer}>
-              <button onClick={() => setShowPrograms(prev => !prev)} style={styles.link}>
+              <button onClick={() => setShowPrograms(prev => !prev)} style={styles.linkdrop}>
                 Programs <span style={styles.arrow}>▼</span>
               </button>
               {showPrograms && (
@@ -113,7 +113,7 @@ export default function Navbar() {
             >
               <button
                 onMouseEnter={() => setShowServices(true)}
-                style={{ ...styles.link }}
+                style={{ ...styles.linkdrop }}
               >
                 Other Services <span style={styles.arrow}>▼</span>
               </button>
@@ -171,6 +171,9 @@ const baseLink = {
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
+   lineHeight: '1.5',             // Add this
+  verticalAlign: 'middle',  
+  fontFamily: 'inherit',   // Add this
 };
 
 const styles = {
@@ -204,6 +207,14 @@ const styles = {
   },
   link: {
     ...baseLink,
+
+    
+  },
+   linkdrop: {
+    ...baseLink,
+     transform: 'translateY(-11px)',
+
+    
   },
   arrow: {
     fontSize: '0.8rem',

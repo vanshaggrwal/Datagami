@@ -29,54 +29,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/pages__error_5771e187._.js",
       "static/chunks/pages__error_c5ed9705._.js"
     ],
-    "/about": [
-      "static/chunks/node_modules_next_dist_f1d2d383._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__2b9a56b5._.js",
-      "static/chunks/pages_about_5771e187._.js",
-      "static/chunks/pages_about_74c420b4._.js"
-    ],
-    "/auth": [
-      "static/chunks/node_modules_next_b0817661._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__d49daa9c._.js",
-      "static/chunks/pages_auth_5771e187._.js",
-      "static/chunks/pages_auth_f9a7da79._.js"
-    ],
-    "/login": [
-      "static/chunks/node_modules_next_b0817661._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__feefda1e._.js",
-      "static/chunks/pages_login_5771e187._.js",
-      "static/chunks/pages_login_4a94f9da._.js"
-    ],
-    "/programs/clinomic": [
-      "static/chunks/node_modules_next_cfdb1e21._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_e372faa3._.js",
-      "static/chunks/[root-of-the-server]__fd574308._.js",
-      "static/chunks/pages_programs_clinomic_jsx_5771e187._.js",
-      "static/chunks/pages_programs_clinomic_jsx_502e832f._.js"
-    ],
-    "/programs/finlearn": [
-      "static/chunks/node_modules_next_cfdb1e21._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_e372faa3._.js",
-      "static/chunks/[root-of-the-server]__f2120ce8._.js",
-      "static/chunks/pages_programs_finlearn_jsx_5771e187._.js",
-      "static/chunks/pages_programs_finlearn_jsx_971f43fb._.js"
-    ],
-    "/programs/techlearn": [
-      "static/chunks/node_modules_next_cfdb1e21._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_e372faa3._.js",
-      "static/chunks/[root-of-the-server]__b55e8f0c._.js",
-      "static/chunks/pages_programs_techlearn_jsx_5771e187._.js",
-      "static/chunks/pages_programs_techlearn_jsx_4ba1b862._.js"
-    ],
     "/services/moc": [
       "static/chunks/node_modules_next_1bb377ee._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
@@ -84,14 +36,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/[root-of-the-server]__eb13b580._.js",
       "static/chunks/pages_services_moc_jsx_5771e187._.js",
       "static/chunks/pages_services_moc_jsx_f559f48a._.js"
-    ],
-    "/services/noc": [
-      "static/chunks/node_modules_next_1bb377ee._.js",
-      "static/chunks/node_modules_react-dom_82bb97c6._.js",
-      "static/chunks/node_modules_2a5cf4bb._.js",
-      "static/chunks/[root-of-the-server]__9c28dc47._.js",
-      "static/chunks/pages_services_noc_jsx_5771e187._.js",
-      "static/chunks/pages_services_noc_jsx_b7cd837e._.js"
     ]
   },
   "devFiles": [],

@@ -166,7 +166,7 @@ function Navbar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setShowPrograms((prev)=>!prev),
-                                style: styles.link,
+                                style: styles.linkdrop,
                                 children: [
                                     "Programs ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -245,7 +245,7 @@ function Navbar() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                                 onMouseEnter: ()=>setShowServices(true),
                                 style: {
-                                    ...styles.link
+                                    ...styles.linkdrop
                                 },
                                 children: [
                                     "Other Services ",
@@ -378,7 +378,10 @@ const baseLink = {
     border: 'none',
     cursor: 'pointer',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    lineHeight: '1.5',
+    verticalAlign: 'middle',
+    fontFamily: 'inherit'
 };
 const styles = {
     nav: {
@@ -411,6 +414,10 @@ const styles = {
     },
     link: {
         ...baseLink
+    },
+    linkdrop: {
+        ...baseLink,
+        transform: 'translateY(-11px)'
     },
     arrow: {
         fontSize: '0.8rem',
