@@ -1,6 +1,6 @@
 // components/Footer.js
 import React from 'react';
-import '../styles/Footer.css';
+
 import { FaPhone, FaEnvelope, FaBriefcase, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
